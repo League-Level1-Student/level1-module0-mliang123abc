@@ -14,7 +14,17 @@ import javax.swing.JPanel;
 
 public class MyFirstSwingGUI {
 	public void run() {
-
+		JFrame j = new JFrame();
+		j.setVisible(true);
+		j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JPanel panel = new JPanel();
+		JLabel label = new JLabel();
+		label.setText("text");
+		j.add(panel);
+		panel.add(label);
+		j.pack();
+		label.setIcon(loadImage());
+		j.pack();
 		// 1. Declare and initialize an object of the JFrame class
 
 		// 2. Set your JFrame object to be visible
@@ -50,7 +60,7 @@ public class MyFirstSwingGUI {
 		try {
 			return new ImageIcon(ImageIO.read(new MyFirstSwingGUI().getClass().getResourceAsStream("java.png")));
 		} catch (IOException e) {
-			e.printStackTrace()
+			e.printStackTrace();
 			return null;
 		}
 	}
