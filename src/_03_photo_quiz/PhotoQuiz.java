@@ -1,3 +1,4 @@
+
 package _03_photo_quiz;
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2019
@@ -13,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class PhotoQuiz {
 
@@ -22,11 +24,37 @@ public class PhotoQuiz {
 		quizWindow.setVisible(true);
 		// This will make sure the program exits when you close the window
 		quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		int c = 0;
+		String image = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_eend_maasmuur.jpg/1200px-Grave_eend_maasmuur.jpg";
+		Component m = createImage(image);
+		quizWindow.add(m);
+		quizWindow.pack();
+		String a = JOptionPane.showInputDialog("does the picture have color"); 
+			if (a.contentEquals("yes")) {
+				System.out.println("correct");
+				c++;
+			}
+			else {
+				System.out.println("incorrect");
+			}
+		quizWindow.remove(m);
+		String i = "https://www.allaboutbirds.org/guide/assets/photo/63895241-480px.jpg";
+		Component n = createImage(i);
+		quizWindow.add(n);
+		quizWindow.pack();
+		String b = JOptionPane.showInputDialog("does the picture contain a liquid");
+			if (b.contentEquals("yes")) {
+				System.out.println("correct");
+				c++;
+			}
+			else {
+				System.out.println("incorrect");
+			}
+		System.out.println("you got " + c + "/2 correct");
+		
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”)
-
 		// 2. create a variable of type "Component" that will hold your image
 
 		// 3. use the "createImage()" method below to initialize your Component

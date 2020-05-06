@@ -23,7 +23,17 @@ public class DrumKit implements MouseListener {
 	JLabel drumLabelWithImage;
 
 	public void run() throws MalformedURLException {
-
+		JFrame frame = new JFrame();
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(400, 600);
+		frame.setTitle("");
+		JPanel panel = new JPanel();
+		frame.add(panel);
+		String s = "cymbal.jpg";
+		JLabel y = createLabelImage(s);
+		panel.add(y);
+		
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
 
 		// 2. Make the frame visible and
