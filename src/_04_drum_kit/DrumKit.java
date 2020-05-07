@@ -33,7 +33,8 @@ public class DrumKit implements MouseListener {
 		String s = "cymbal.jpg";
 		JLabel y = createLabelImage(s);
 		panel.add(y);
-		
+		panel.setLayout(new GridLayout());
+		frame.pack();
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
 
 		// 2. Make the frame visible and

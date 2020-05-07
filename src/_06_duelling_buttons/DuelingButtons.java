@@ -25,7 +25,16 @@ public class DuelingButtons implements ActionListener {
 	JPanel panel = new JPanel();
 
 	public void run() {
-
+		frame.add(panel);
+		frame.setVisible(true);
+		leftButton.setText("Click me!");
+		rightButton.setText("Click me!");
+		leftButton.addActionListener(this);
+		rightButton.addActionListener(this);
+		panel.add(leftButton);
+		panel.add(rightButton);
+		frame.pack();
+		frame.setTitle("Demanding Buttons");
 		// 1. Add the panel to the frame
 
 		// 2. Make the frame visible
@@ -51,7 +60,18 @@ public class DuelingButtons implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		JButton buttonPressed = (JButton) arg0.getSource();
-
+		if (buttonPressed == leftButton) {
+			rightButton.setText("No, click Me!");
+			rightButton.setPreferredSize(BIG);
+			leftButton.setText("Click Me!");
+			leftButton.setPreferredSize(SMALL);
+		}
+		else {
+			leftButton.setText("No, click Me!");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setText("Click Me!");
+			rightButton.setPreferredSize(SMALL);
+		}
 		/* If the buttonPressed was the leftButton.... */
 		// Set the text of the rightButton to "No, click Me!"
 		// Set the PREFERRED size of the rightButton to BIG
